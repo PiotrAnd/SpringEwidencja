@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8"/>
+    <title>Home page</title>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+
+    <link href="../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<h1>Welcome [[${#httpServletRequest.remoteUser}]]!</h1>
+<li><a th:href="${'/about'}" href="about">About</a> <br /></li>
+<li><a th:href="${'/podstawy'}" href="booking">Podstawy prawne</a> <br /></li>
+<li><a th:href="${'/cars'}" href="car">Usunięte pojazdy</a> <br /></li>
+<li><a th:href="${'/login'}" href="login">Login</a> <br /></li>
+<li><a th:href="${'/registration'}" href="registration">Registration</a></li>
+<!--<p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>-->
+</body>
+</html>

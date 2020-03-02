@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot and Spring MVC</title>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+
+    <link href="../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Show Car50a</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Car50a Id:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${car50a.id}">Car50a Id</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Numer sprawy:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${car50a.nrSprawy}">Numer sprawy</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Marka pojazdu:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${car50a.markaPojazdu}">Marka pojazdu</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 sm-2 control-label">Numer rejestracyjny</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${car50a.nrRejestracyjny}">Numer rejestracyjny</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 sm-2 control-label">Właściciel:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${car50a.wlasciciel}">Właściciel</p>
+                    </div>
+                </div>
+<!--                <div class="form-group">-->
+<!--                    <label class="col-sm-2 sm-2 control-label">Do kogo ostatnie pismo zostało wysłane:</label>-->
+<!--                    <div class="col-sm-10">-->
+<!--                        <p class="form-control-static" th:text="${car50a.pismo}">Pismo</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <label class="col-sm-2 sm-2 control-label">Data pisma:</label>-->
+<!--                    <div class="col-sm-10">-->
+<!--                        <p class="form-control-static" th:text="${car50a.dataPisma}">Data pisma</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <label class="col-sm-2 sm-2 control-label">Data usunięcia pojazdu:</label>-->
+<!--                    <div class="col-sm-10">-->
+<!--                        <p class="form-control-static" th:text="${car50a.usunięcie}">Data usunięcia pojazdu</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <label class="col-sm-2 sm-2 control-label">Data przjęcia pojazdu:</label>-->
+<!--                    <div class="col-sm-10">-->
+<!--                        <p class="form-control-static" th:text="${car50a.przejecie}">Data przjęcia pojazdu</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <label class="col-sm-2 sm-2 control-label">Status:</label>-->
+<!--                    <div class="col-sm-10">-->
+<!--                        <p class="form-control-static" th:text="${car50a.status}">Status</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </form>
+        </div>
+    </div>
+    <div>
+        <a th:href="${'/cars50a'}">Back to list</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+
+    <link href="../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container">
+
+    <h2>Ewidencja detale</h2>
+    <div>
+        <form class="form-horizontal" th:object="${record}" th:action="@{/record}" method="post">
+            <input type="hidden" th:field="*{recordsId}"/>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Id projektu:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{project}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Id pracownika:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{employee}"/>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Czas pracy w danym projekcie:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" th:field="*{workTime}"/>
+                    </div>
+            </div>
+            
+            
+            <div class="row">
+                <button type="submit" class="btn btn-default">Zatwierdź</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <a th:href="${'/records'}">Powrót</a>
+    </div>
+</div>
+
+</body>
+</html>

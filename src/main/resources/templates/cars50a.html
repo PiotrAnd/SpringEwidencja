@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pojazdy usunięte na podstawie art. 50a</title>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+
+    <link href="../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container">
+<!--    <div th:if="${not #lists.isEmpty(cars50a)}">-->
+        <h2>Cars50a List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Numer sprawy</th>
+                <th>Marka pojazdu</th>
+                <th>Numer rejestracyjny</th>
+                <th>Właściciel</th>
+<!--                <th>Pismo</th>-->
+<!--                <th>Data pisma</th>-->
+<!--                <th>Data usunięcia</th>-->
+<!--                <th>Data przejęcia</th>-->
+<!--                <th>Status</th>-->
+            </tr>
+            <tr th:each="car50a : ${cars50a}">
+                <td th:text="${car50a.id}">1</td>
+                <td th:text="${car50a.nrSprawy}">Some desc</td>
+                <td th:text="${car50a.markaPojazdu}">Some desc</td>
+                <td th:text="${car50a.nrRejestracyjny}">Some desc</td>
+                <td th:text="${car50a.wlasciciel}">Some desc</td>
+<!--                <td th:text="${car50a.pismo}">Some desc</td>-->
+<!--                <td th:text="${car50a.dataPisma}">Some desc</td>-->
+<!--                <td th:text="${car50a.usunięcie}">Some desc</td>-->
+<!--                <td th:text="${car50a.przejecie}">Some desc</td>-->
+<!--                <td th:text="${car50a.status}">Some desc</td>-->
+                <td>
+                    <a th:href="${'/car50a/' + car50a.id}">Show</a> <br />
+                    <a th:href="${'/car50a/edit/' + car50a.id}">Edit</a> <br />
+                    <a th:href="${'/car50a/delete/' + car50a.id}">Delete</a>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <a th:href="${'/car50a/new'}">New Car50a</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

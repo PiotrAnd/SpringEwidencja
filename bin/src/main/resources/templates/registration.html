@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Videopoint tutorial">
+    <link rel="icon" href="/ico/favicon.ico">
+    <title>User</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <form class="form-signin" method="post" action="/registration">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" class="form-control" id="inputName"  placeholder="Name" required autofocus max="40">
+        </div>
+
+        <div class="form-group">
+            <label>Surname:</label>
+            <input type="text" class="form-control" id="inputLastName"  placeholder="Surname" required ax="40">
+        </div>
+
+        <div class="form-group">
+            <label>Login:</label>
+            <input type="text" class="form-control" id="inputUsername"  placeholder="Login" required min="6" max="40">
+        </div>
+
+        <div class="form-group">
+            <label>E-mail:</label>
+            <input type="email" class="form-control" id="inputEmail"  placeholder="E-mail" required >
+        </div>
+
+
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" class="form-control" id="inputPassword"  placeholder="Password" required min="6" max="20">
+        </div>
+
+        <div class="form-group">
+            <label>Password again:</label>
+            <input type="password" class="form-control" id="inputPasswordAgain"  placeholder="Password" required min="6" max="20">
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">Register</button>
+
+    </form>
+    <p class="mt-3 login_link pl-3"><a th:href="@{/}">Home</a></p>
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ewidencja</title>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+
+    <link href="../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container">
+        <h2>Ewidencja czasu pracy</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id ewidencji</th>
+                <th>Id projektu</th>
+                <th>Id pracownika</th>
+                <th>Godziny</th>
+              
+               
+            </tr>
+            <tr th:each="record : ${records}">
+                <td th:text="${record.recordsId}">1</td>
+                <td th:text="${record.project}">Some desc</td>
+                <td th:text="${record.employee}">Some desc</td>
+                <td th:text="${record.workTime}">Some desc</td>
+                <td>
+                    <a th:href="${'/record/' + record.recordsId}">Pokaż</a> <br />
+                    <a th:href="${'/record/edit/' + record.recordsId}">Edycja</a> <br />
+                    <a th:href="${'/record/delete/' + record.recordsId}">Usuń</a>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <a th:href="${'/record/new'}">Dodaj nową ewidencję</a>
+            <a th:href="${'/'}">Powrót</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
